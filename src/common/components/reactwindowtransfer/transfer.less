@@ -1,0 +1,127 @@
+//@import "~antd/lib/style/themes/default";
+@import "~antd/lib/style/mixins/index";
+
+@prefix: transfer;
+.@{prefix} {
+    position: relative;
+    line-height: @line-height-base;
+    display: flex;
+    align-items: center;
+    overflow:hidden;
+    &-list {
+        font-size: @font-size-base;
+        border: @border-width-base @border-style-base @border-color-base;
+        border-radius: @border-radius-base;
+        vertical-align: middle;
+        position: relative;
+        outline: none;
+        div {
+            outline: none;
+        }
+        li {
+            list-style-type: none;
+            list-style-position: outside;
+            list-style-image: none;
+        }
+        &-header {
+            padding: 0px 15px;
+            line-height: 33px;
+            border-radius: @border-radius-base @border-radius-base 0 0;
+            /*background: @component-background;
+            color: @text-color;
+            border-bottom: @border-width-base @border-style-base @border-color-split;*/
+            overflow: hidden;
+            width: 100%;
+            &-title {
+                position: absolute;
+                right: 15px;
+            }
+        }
+        &-search {
+            &-wapper {
+                padding: 0px 4px;
+                line-height: 38px;
+                position: relative;
+            }
+            &-action {
+                color: @disabled-color;
+                position: absolute;
+                top: 4px;
+                right: 4px;
+                bottom: 4px;
+                width: 28px;
+                line-height: 26px;
+                text-align: center;
+                font-size: @font-size-lg;
+                .@{iconfont-css-prefix} {
+                    transition: all .3s;
+                    font-size: @font-size-base;
+                    color: @disabled-color;
+                    &:hover {
+                        color: @text-color-secondary;
+                    }
+                }
+                span& {
+                    pointer-events: none;
+                }
+            }
+        }
+        &-content {
+            &-item {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                padding: 7px 15px;
+                min-height: 32px;
+                transition: all .3s;
+            }
+            &-item-disabled {
+                cursor: not-allowed;
+                color: @btn-disable-color;
+            }
+            &-item:not(&-item-disabled):hover {
+                cursor: pointer;
+                background-color:rgba(248,240,255,1);
+            }
+        }
+        &-body-not-found {
+            // padding-top: 0;
+            color: @disabled-color;
+            text-align: center;
+            // display: none;
+            // position: absolute;
+            // top: 50%;
+            width: 100%;
+            // margin-top: -10px;
+        }
+        &-footer {
+            border-top: @border-width-base @border-style-base @border-color-split;
+            border-radius: 0 0 @border-radius-base @border-radius-base;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        } // fix the problem of ReactVirtualized List must hava width (number) props
+        &-virtualized {
+            width: 100% !important;
+        }
+        .ReactVirtualized__Grid__innerScrollContainer {
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+    }
+    &-operation {
+        overflow: hidden;
+        margin: 0 8px;
+        flex: none;
+        .@{ant-prefix}-btn {
+            display: block;
+            &:first-child {
+                margin-bottom: 4px;
+            }
+            .@{iconfont-css-prefix} {
+                .iconfont-size-under-12px(10px);
+            }
+        }
+    }
+}

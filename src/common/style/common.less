@@ -1,0 +1,180 @@
+/*
+  公用样式
+  author : flj
+  time   : 2018-5-10
+*/
+@import '~antd/dist/antd.less';
+@import "base.less";
+@import "antd.less";
+
+.layout{
+  .header{
+    position: relative;
+    .logo{
+      font-size: 20px;
+      font-family: PingFang-SC-Medium;
+      color:#fff;
+      font-weight: bold;
+    }
+
+    ul{
+      width: 600px;
+      border: none
+    }
+    .exit{
+      position:absolute;
+      top:3px;
+      right: 21px;
+      cursor: pointer;
+      .person{
+        font-size:20px;
+        color:#fff;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .ant-layout-sider{
+  }
+
+  .ant-layout-content{
+    //overflow-y: auto;
+    flex:1;
+  }
+
+}
+
+/**SplitPane面板分隔组件样式**/
+.Resizer {
+  background: #000;
+  opacity: .2;
+  z-index: 1;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding;
+  background-clip: padding-box;
+}
+
+.Resizer:hover {
+  /*-webkit-transition: all 2s ease;
+  transition: all 2s ease;*/
+}
+
+.Resizer.horizontal {
+  height: 16px;
+  margin: 0 auto;
+  border-top: 5px solid rgba(255, 255, 255, 0);
+  border-bottom: 5px solid rgba(255, 255, 255, 0);
+  cursor: row-resize;
+  width: 18px;//width:100%;
+  background-color:rgba(0, 0, 0, 0.5);
+}
+
+.Resizer.horizontal:hover {
+  /*border-top: 5px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 5px solid rgba(0, 0, 0, 0.5);*/
+  width:100%;
+}
+
+.Resizer.vertical {
+  width: 11px;
+  height: 21px;
+  margin: auto 0;
+  cursor: col-resize;
+  border-left: 5px solid rgba(255, 255, 255, 0);
+  border-bottom: 5px solid rgba(255, 255, 255, 0);
+  background-color:rgba(0, 0, 0, 0.5);
+  cursor: col-resize;
+}
+
+.Resizer.vertical:hover {
+  height:100%;
+  /*border-left: 5px solid rgba(0, 0, 0, 0.5);
+  border-right: 5px solid rgba(0, 0, 0, 0.5);*/
+}
+.Resizer.disabled {
+  cursor: not-allowed;
+}
+.Resizer.disabled:hover {
+  border-color: transparent;
+}
+/**SplitPane面板分隔组件样式**/
+
+
+*,p {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* font-size: 12px;
+   font-family: Microsoft YaHei;
+   box-sizing: border-box;
+   -moz-box-sizing: border-box;*/
+}
+
+html, body {
+  font-size: 62.5%;
+  width: 100%;
+  height: 100%;
+  min-width:1280px;
+  min-height:720px;
+  overflow:auto;
+  /* overflow: hidden;*/
+}
+#root {
+  width: 100%;
+  height: 100%;;
+}
+a:hover {
+  cursor: pointer;
+}
+
+textarea {
+  resize: none;
+}
+
+
+::-webkit-scrollbar {/*滚动条整体样式*/
+
+  width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
+
+  height: 10px;
+
+}
+
+::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+
+  border-radius: 10px;
+
+  -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+
+  background: rgba(83, 83, 83, 0.15);
+
+}
+
+::-webkit-scrollbar-track {/*滚动条里面轨道*/
+
+  -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+
+  border-radius: 10px;
+
+  background: #EDEDED;
+
+}
+
+
+
+.taskTitle {
+  p {
+    display: inline-block;
+  }
+  p.search {
+    display: inline-block;; //none;
+    position: absolute;
+    right: 5px;
+    font-size: 12px;
+    color: blue;
+    cursor: pointer;
+  }
+}

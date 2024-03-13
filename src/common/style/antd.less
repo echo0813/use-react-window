@@ -1,0 +1,58 @@
+@import "base.less";
+/*
+  覆盖一些antd组件库的样式
+  author : flj
+  time   : 2018-5-10
+*/
+
+.ant-tooltip{
+  background: transparent!important;
+}
+
+.ant-tooltip-inner{
+  background-color: #fff;
+  color:#000;
+}
+
+.ant-tooltip-placement-right .ant-tooltip-arrow, .ant-tooltip-placement-rightTop .ant-tooltip-arrow, .ant-tooltip-placement-rightBottom .ant-tooltip-arrow{
+  border-right-color: #fff;
+}
+
+.select-empower-users-model,.select-empower-users-list {
+  .ant-modal-content {
+      width: 800px;
+      .ant-modal-body {
+          height: 200px;
+          width: 800px;
+          .empower-condition {
+              display: flex;
+              flex-direction: row;
+              margin-top: 20px;
+              >div {
+                  display: flex;     
+                  margin-right: 10px;           
+                  >ant-select, >input, >button {
+                      flex: 1;
+                  }
+                  >span {
+                      margin-right: 10px;
+                      line-height: 32px;
+                  }
+                  .ant-select-selection__rendered {
+                      min-width: 30px!important;
+                  }
+              }
+          }
+          .select-user {
+              margin-top: 20px;
+              >span {
+                  margin-right: 10px;
+              }
+              .ant-select-selection__rendered {
+                  min-width: 70px!important;
+              }
+          }
+      }
+  }
+}
+
