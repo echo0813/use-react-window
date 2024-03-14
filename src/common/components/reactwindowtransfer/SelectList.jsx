@@ -248,7 +248,7 @@ export default class SelectList extends React.Component {
                         ref={(list) => { this.list = list; }}
                         height={height}
                         itemCount={dataSource.length}
-                        itemSize={35}
+                        itemSize={30}
                         width={width}
                         itemData={selectedKeys} /*不传递itemData，勾选交互不生效*/
                       >
