@@ -4,14 +4,17 @@ import {Icon,Input,Button} from 'antd';
 import ReactWindowTransfer from '@/common/components/reactwindowtransfer'
 import '../../common/style/common.less'
 const DEFAULT_LEN = 10000;//数据条数  76万
+
 class Index extends Component {
   constructor(props) {
     super(props);
+    let ulData = Array.from({ length: 100 }).map((v, i) => ({ key:`${i}`,id: `${i}`, name: 'test' + i }))
     this.state = {
       selectedKeys: [],
       targetKeys: [], // 精确筛选选中的内容
       dataLen:DEFAULT_LEN,
-      data:[]
+      data:[],
+      ulData
     }
   }
 
@@ -46,7 +49,7 @@ class Index extends Component {
   }
 
   render() {
-    const{data=[],targetKeys=[],selectedKeys=[],dataLen} = this.state;
+    const{data=[],targetKeys=[],selectedKeys=[],dataLen,ulData} = this.state;
     return (
       <div style={{width:'800px',height:'100%',padding:'16px'}}>
         <div>使用react-widow自定义的穿梭框</div>
@@ -60,13 +63,14 @@ class Index extends Component {
           titles={['未选', '已选']} rowHeight={32} listStyle={{width: '40%', height: 360,}} showSearch={true}
           operations={[<Icon type="left" />, <Icon type="right" />]} notFoundContent={'not found'} searchPlaceholder={'Search'}
         />
-        <div>测试页面最大高度</div>
+        <div style={{marginTop:'20px'}}>测试页面最大高度</div>
         <div>页面显示最高高度是 22369600px</div>
-        <div style={{width:'300px',height:'400px',overflow:'hidden',border:'1px solid blue'}}>
-          <div style={{width:'300px',height:'22369700px',overflow:'scroll'}}>
-            sdfslkfjs
-            sflsdfsdf
-          </div>
+        <div style={{width:'300px',height:'400px',overflowY:'scroll',border:'1px solid blue'}}>
+          <ul style={{width:'300px',height:'22369700px'}}>
+            {ulData.map(item=>{
+              return <li key={item.key} style={{marginBottom:'8px',fontSize:'14px'}}>{item.name}</li>
+            })}
+          </ul>
         </div>
 
       </div>
